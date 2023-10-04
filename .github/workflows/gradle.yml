@@ -24,7 +24,7 @@ jobs:
         dependency-graph: generate-and-submit
 
     - name: Look at directory
-      run: ls -l /usr/local/lib/android/sdk
+      run: ls -l /usr/local/lib/android/sdk/ndk
 
     - name: Execute Gradle build
       run: ./gradlew build
