@@ -12,10 +12,14 @@ jobs:
     - name: Setup Java JDK
       uses: actions/setup-java@v3
       with:
-        java-version: 1.8
+        distribution: temurin
+        java-version: 8
 
     - name: Make gradlew executable
       run: chmod +x gradlew
+
+    - name: Look at directory
+      run: ls -l /usr/local/lib/android/sdk
 
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2.9.0
