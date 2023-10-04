@@ -18,13 +18,13 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x gradlew
 
-    - name: Look at directory
-      run: ls -l /usr/local/lib/android/sdk
-
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2.9.0
       with:
         dependency-graph: generate-and-submit
+
+    - name: Look at directory
+      run: ls -l /usr/local/lib/android/sdk
 
     - name: Execute Gradle build
       run: ./gradlew build
