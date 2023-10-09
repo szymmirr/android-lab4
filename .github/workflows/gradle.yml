@@ -28,7 +28,7 @@ jobs:
         dependency-graph: generate-and-submit
 
     - name: Check lint
-      run: ./gradlew :app:lintProdRelease :app-nia-catalog:lintRelease :lint:lint
+      run: ./gradlew :app:lintProdRelease :lint:lint
 
     - name: Upload lint reports
       uses: github/codeql-action/upload-sarif@v2
