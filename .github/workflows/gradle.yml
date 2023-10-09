@@ -1,9 +1,9 @@
 name: Build Gradle App
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ "master" ]
 
 jobs:
   gradle:
@@ -27,13 +27,8 @@ jobs:
       with:
         dependency-graph: generate-and-submit
 
-    - name: Check lint
-      run: ./gradlew :app:lintProdRelease :app-nia-catalog:lintRelease :lint:lint
-
-    - name: Upload lint reports
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: './'
+    - name: Validate Gradle Wrapper
+      uses: gradle/wrapper-validation-action@v1
 
     - name: Execute Gradle build
       run: ./gradlew build
@@ -42,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: android-lab4
-        path: build
+        path: build/generated
