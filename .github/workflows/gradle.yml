@@ -30,14 +30,6 @@ jobs:
     - name: Validate Gradle Wrapper
       uses: gradle/wrapper-validation-action@v1
 
-    - name: Check lint
-      run: ./gradlew lint
-
-    - name: Upload lint reports
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: app/build/reports
-
     - name: Execute Gradle build
       run: ./gradlew build
 
@@ -45,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: android-lab4
-        path: build/generated
+        path: build
