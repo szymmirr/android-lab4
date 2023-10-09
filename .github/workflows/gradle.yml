@@ -36,5 +36,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: android-lab4
+        name: android-lab4-artifact
         path: build/generated
