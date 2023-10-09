@@ -36,6 +36,9 @@ jobs:
         name: android-lab4
         path: build
 
+    - name: Look at folder
+      run: ls -l
+
     - name: Check lint
       run: ./gradlew lint
 
